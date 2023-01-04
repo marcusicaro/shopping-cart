@@ -22,7 +22,7 @@ export default function Item() {
     <div>
       {id}
       <br></br>
-      <h1>{renderItem(id)}</h1>
+      {renderItem(id)}
     </div>
   );
 }
