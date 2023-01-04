@@ -5,51 +5,59 @@ export default function Header() {
   const [searchParams, setSearchParams] = useSearchParams({
     name: "",
   });
-  const [items, setItems] = useState({
-    greenDragon: {
+  const [items, setItems] = useState([
+    {
       name: "Green Dragon",
       price: 10,
-      id: 1,
+      id: "greenDragon",
     },
-    brownDragon: {
+    {
       name: "Brown Dragon",
       price: 20,
+      id: "brownDragon",
     },
-    redDragon: {
+    {
       name: "Red Dragon",
       price: 50,
+      id: "redDragon",
     },
-    silverDragon: {
+    {
       name: "Silver Dragon",
       price: 100,
+      id: "silverDragon",
     },
-    blackDragon: {
+    {
       name: "Black Dragon",
       price: 250,
+      id: "blackDragon",
     },
-    spikedDragon: {
+    {
       name: "Spiked Tail Dragon",
       price: 500,
+      id: "spikedDragon",
     },
-    chineseDragon: {
+    {
       name: "Chinese Dragon",
       price: 1000,
+      id: "chineseDragon",
     },
-    skullDragon: {
+    {
       name: "Skull Dragon",
       price: 1500,
+      id: "skullDragon",
     },
-    dancingDragon: {
+    {
       name: "Dancing Dragon",
       price: 5000,
+      id: "dancingDragon",
     },
-  });
+  ]);
 
   const name = searchParams.get("name");
   return (
     <div>
       Header
-      <Outlet context={[items, setItems]} />
+      <Outlet context={[items]} />
       <input
         type='text'
         value={name}

@@ -13,7 +13,7 @@ describe("App component", () => {
 
     // tests if redirects to shop page
     await user.click(screen.getByText(/shop/i));
-    expect(screen.getByText(/Items Page/i)).toBeInTheDocument();
+    expect(screen.getByText(/Shop Page/i)).toBeInTheDocument();
   });
 
   test("landing on a bad page", () => {
@@ -38,6 +38,5 @@ describe("App component", () => {
     );
 
     expect(screen.getByText(/someItem/i)).toBeInTheDocument();
-    expect(screen.getByText(/red dragon/i)).toBeInTheDocument();
   });
 });

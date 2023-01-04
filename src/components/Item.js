@@ -9,7 +9,6 @@ export default function Item() {
     <div>
       {id}
       <br></br>
-      {items.redDragon.name}
     </div>
   );
 }
