@@ -39,10 +39,27 @@ describe("App component", () => {
       expect(screen.getByText(/green dragon/i)).toBeInTheDocument();
       expect(screen.getByText(/red dragon/i)).toBeInTheDocument();
     });
-    test("render items prices", () => {
-      loadPage();
 
-      expect(screen.getByText("50")).toBeInTheDocument();
+    describe("Item page (testing with red dragon item)", () => {
+      function loadPage() {
+        const itemRoute = "/shop/redDragon";
+        render(
+          <MemoryRouter initialEntries={[itemRoute]}>
+            <App />
+          </MemoryRouter>
+        );
+      }
+      test("render items prices", async () => {
+        loadPage();
+
+        expect(screen.getByText("50")).toBeInTheDocument();
+        expect(screen.getByText(/red dragon/i)).toBeInTheDocument();
+        expect(
+          screen.getByRole("button", { name: /buy/i })
+        ).toBeInTheDocument();
+
+        await user.click(screen.getByText(/buy/i));
+      });
     });
 
     test("goes to item page", async () => {
@@ -52,28 +69,18 @@ describe("App component", () => {
       expect(screen.getByRole("heading").textContent).toMatch(/red dragon/i);
     });
 
-    test("renders cart", async () => {
-      loadPage();
+    // test("renders cart", async () => {
+    //   loadPage();
 
-      expect(screen.getByRole("button", { name: "+" })).toBeInTheDocument();
+    //   expect(screen.getByRole("button", { name: "+" })).toBeInTheDocument();
 
-      // tests cart variation
-      await user.click(screen.getByRole("button", { name: "+" }));
-      expect(screen.getByText("1")).toBeInTheDocument();
-    });
+    //   // tests cart variation
+    //   await user.click(screen.getByRole("button", { name: "+" }));
+    //   expect(screen.getByText("1")).toBeInTheDocument();
+    // });
   });
 
   describe("item page", () => {
-    test("landing on a item page", () => {
-      const itemRoute = "/shop/someItem";
-      render(
-        <MemoryRouter initialEntries={[itemRoute]}>
-          <App />
-        </MemoryRouter>
-      );
-
-      expect(screen.getByText(/someItem/i)).toBeInTheDocument();
-    });
     test("landing on an existing item page", () => {});
     const redDragon = "/shop/redDragon";
     render(

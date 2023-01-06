@@ -2,10 +2,10 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Item from "./pages/Item";
+import Item from "./Item";
 
 export default function Shop() {
-  const [items] = useOutletContext();
+  const [item] = useOutletContext();
   const handleItemsRender = (list) => {
     return list.map((e) => (
       <div key={e.id}>
@@ -20,7 +20,7 @@ export default function Shop() {
   return (
     <div>
       <h1>Shop Page</h1>
-      {handleItemsRender(items)}
+      {handleItemsRender(item)}
       <Routes>
         <Route path='/shop/:id' element={<Item />} />
       </Routes>

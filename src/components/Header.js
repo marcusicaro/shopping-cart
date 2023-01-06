@@ -14,10 +14,10 @@ export default function Header(props) {
   return (
     <div>
       Header
-      <p>{props.cart}</p>
       <Cart
         addItemToCart={props.addItemToCart}
         removeItemFromCart={props.removeItemFromCart}
+        cart={props.cart}
       />
       <input
         type='text'
