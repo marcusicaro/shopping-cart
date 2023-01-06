@@ -22,8 +22,9 @@ export default function Cart(props) {
             -
           </button>
           <h3>{e.name}</h3>
-          <p>{e.quantity}</p>
+          <p data-testid={"paragraph"}>{e.quantity}</p>
           <button
+            data-testid={"increase"}
             onClick={() => {
               props.addItemToCart(e);
               setItems(props.cart);

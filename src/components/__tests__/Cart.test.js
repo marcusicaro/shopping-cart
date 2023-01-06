@@ -2,18 +2,21 @@ import React from "react";
 import { render, screen, within } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Cart from "../Cart";
+import userEvent from "@testing-library/user-event";
 
 const cart = [
   { name: "first", quantity: 2 },
   { name: "second", quantity: 1 },
 ];
 
-describe("Shop cart tests", () => {
-  test("shop cart renders", () => {
-    const removeItemFromCart = jest.fn();
-    const addItemToCart = jest.fn();
+const user = userEvent.setup();
 
-    render(
+describe("Shop cart tests", () => {
+  test("shop cart renders", async () => {
+    const removeItemFromCart = jest.fn(() => 1);
+    const addItemToCart = jest.fn(() => 3);
+
+    const { getByText } = render(
       <Cart
         cart={cart}
         removeItemFromCart={removeItemFromCart}
@@ -25,14 +28,23 @@ describe("Shop cart tests", () => {
 
     expect(screen.getByTestId("first")).toBeInTheDocument();
 
-    const first = screen.getAllByTestId(/first/i);
+    const first = screen.getByTestId(/first/i);
 
-    const firstHeader = within(first).getByRole("heading", { name: "first" });
+    const increaseButton = within(first).getByRole("button", {
+      name: "+",
+    });
 
-    // testando com getAllBy usa-se array
-    // expect(screen.getAllByTestId("foo")[1]).toBeInTheDocument();
+    await user.click(increaseButton);
+    expect(addItemToCart.mock.calls.length).toEqual(1);
+    expect(addItemToCart()).toBe(3);
+    // expect(addItemToCart.mock.calls.result.value).toEqual(3);
 
-    // const getItemName = jest.fn().mockReturnValue(cart[0].name);
-    // const result = getItemName();
+    const decreaseButton = within(first).getByRole("button", {
+      name: "-",
+    });
+
+    expect(decreaseButton).toBeInTheDocument();
+    await user.click(decreaseButton);
+    expect(removeItemFromCart.mock.calls.length).toEqual(1);
   });
 });

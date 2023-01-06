@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, Outlet, useSearchParams } from "react-router-dom";
+import { Link, Outlet, useNavigate, useSearchParams } from "react-router-dom";
 import Cart from "./Cart";
 import itemsList from "./data/itemsList";
 
@@ -10,9 +10,11 @@ export default function Header(props) {
   const [items, setItems] = useState(itemsList);
 
   const name = searchParams.get("name");
+  const navigate = useNavigate();
 
   return (
     <div>
+      <button onClick={() => navigate(-1)}>Back</button>
       Header
       <Cart
         addItemToCart={props.addItemToCart}
