@@ -7,7 +7,7 @@ export default function Header(props) {
   const [searchParams, setSearchParams] = useSearchParams({
     name: "",
   });
-  const [items, setItems] = useState(itemsList);
+  const [items] = useState(itemsList);
 
   const name = searchParams.get("name");
   const navigate = useNavigate();

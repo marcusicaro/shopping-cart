@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Home(props) {
   return (
-    <div>
+    <div className='home-bg'>
       <Link to='/shop'>
         <button>Shop</button>
       </Link>

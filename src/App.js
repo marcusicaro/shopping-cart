@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home";
 import NotFound from "./components/pages/NotFound";
@@ -7,6 +7,16 @@ import "./App.css";
 
 function App() {
   const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    if (cart === []) {
+      return;
+    }
+
+    if (cart.length > 1) {
+      setCart(cart);
+    }
+  }, []);
 
   const addItemToCart = (item) => {
     let cartCopy = [...cart];
@@ -26,6 +36,8 @@ function App() {
       });
 
     setCart(cartCopy);
+
+    sessionStorage.setItem("pageCart", [...cart]);
   };
 
   const removeItemFromCart = (item) => {
@@ -42,6 +54,8 @@ function App() {
     });
 
     setCart(cartCopy);
+
+    sessionStorage.setItem("pageCart", [...cart]);
   };
 
   return (
