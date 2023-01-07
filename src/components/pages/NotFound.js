@@ -1,8 +1,5 @@
-import React, { useEffect } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import React from "react";
 
 export default function NotFound() {
-  const navigate = useNavigate();
-
   return <h1>404 Dragon Not Found</h1>;
 }

@@ -18,3 +18,5 @@ Red dragon: Imagem de <a href="https://pixabay.com/pt/users/ractapopulous-24766/
 Dancing dragon: Imagem de <a href="https://pixabay.com/pt/users/susannp4-1777190/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1152056">Susann Mielke</a> por <a href="https://pixabay.com/pt//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1152056">Pixabay</a>
 
 Skull dragon: Imagem de <a href="https://pixabay.com/pt/users/ractapopulous-24766/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1957809">JL G</a> por <a href="https://pixabay.com/pt//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1957809">Pixabay</a>
+
+Imagem de <a href="https://pixabay.com/pt/users/wikiimages-1897/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=11098">WikiImages</a> por <a href="https://pixabay.com/pt//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=11098">Pixabay</a>
