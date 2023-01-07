@@ -10,9 +10,9 @@ function App() {
 
   useEffect(() => {
     cart.length > 1 && setCart(cart);
-  }, []);
+  }, [cart]);
 
-  const addItemToCart = (item) => {
+  function addItemToCart(item) {
     let cartCopy = [...cart];
     let notInCart = true;
 
@@ -32,9 +32,9 @@ function App() {
     setCart(cartCopy);
 
     sessionStorage.setItem("pageCart", [...cart]);
-  };
+  }
 
-  const removeItemFromCart = (item) => {
+  function removeItemFromCart(item) {
     let cartCopy = [...cart];
 
     cartCopy.forEach((el, index) => {
@@ -50,7 +50,7 @@ function App() {
     setCart(cartCopy);
 
     sessionStorage.setItem("pageCart", [...cart]);
-  };
+  }
 
   return (
     <div className='App'>
