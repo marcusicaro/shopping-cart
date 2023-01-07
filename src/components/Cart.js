@@ -3,20 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 export default function Cart(props) {
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    setItems(props.cart);
-  }, [props]);
-
   const handleRenderItems = () => {
-    return items.map((e) => {
+    return props.cart.map((e) => {
       return (
         <div data-testid={e.name} key={e.name}>
           <button
             onClick={() => {
               props.removeItemFromCart(e);
-              setItems(props.cart);
             }}
           >
             -
@@ -27,7 +20,6 @@ export default function Cart(props) {
             data-testid={"increase"}
             onClick={() => {
               props.addItemToCart(e);
-              setItems(props.cart);
             }}
           >
             +

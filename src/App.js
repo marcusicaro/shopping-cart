@@ -8,10 +8,6 @@ import "./App.css";
 function App() {
   const [cart, setCart] = useState([]);
 
-  useEffect(() => {
-    cart.length > 1 && setCart(cart);
-  }, [cart]);
-
   function addItemToCart(item) {
     let cartCopy = [...cart];
     let notInCart = true;
