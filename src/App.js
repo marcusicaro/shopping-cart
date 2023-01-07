@@ -10,24 +10,22 @@ function App() {
 
   function addItemToCart(item) {
     let cartCopy = [...cart];
-    let notInCart = true;
+    let itemInCart;
 
     cartCopy.forEach((el) => {
       if (el.name === item.name) {
-        notInCart = false;
-        return (el.quantity = el.quantity + 1);
+        itemInCart = true;
+        return (el.quantity += 1);
       }
     });
 
-    notInCart === true &&
+    itemInCart == null &&
       cartCopy.push({
         name: item.name,
         quantity: 1,
       });
 
     setCart(cartCopy);
-
-    sessionStorage.setItem("pageCart", [...cart]);
   }
 
   function removeItemFromCart(item) {
@@ -35,7 +33,7 @@ function App() {
 
     cartCopy.forEach((el, index) => {
       if (el.name === item.name) {
-        el.quantity = el.quantity - 1;
+        el.quantity -= 1;
 
         if (el.quantity === 0) {
           return cartCopy.splice(index, 1);
@@ -44,8 +42,6 @@ function App() {
     });
 
     setCart(cartCopy);
-
-    sessionStorage.setItem("pageCart", [...cart]);
   }
 
   return (
