@@ -9,13 +9,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    if (cart === []) {
-      return;
-    }
-
-    if (cart.length > 1) {
-      setCart(cart);
-    }
+    cart.length > 1 && setCart(cart);
   }, []);
 
   const addItemToCart = (item) => {
