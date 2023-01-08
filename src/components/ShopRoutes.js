@@ -13,6 +13,7 @@ export default function ShopRoutes(props) {
             <Header
               addItemToCart={props.addItemToCart}
               removeItemFromCart={props.removeItemFromCart}
+              handleDeleteItem={props.handleDeleteItem}
               cart={props.cart}
             />
           }

@@ -343,6 +343,11 @@ a {
   margin-left: 80%;
 }
 
+.remove {
+  color: rgba(255, 0, 0, 0.877);
+  cursor: pointer;
+}
+
 @media screen and (max-width: 650px) {
   .header-content {
     grid-template-columns: 1fr;

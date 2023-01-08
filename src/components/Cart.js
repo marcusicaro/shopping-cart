@@ -33,7 +33,17 @@ export default function Cart(props) {
             >
               +
             </button>
-            <h3>{e.name}</h3>
+            <div className='text-content'>
+              <h3>{e.name}</h3>{" "}
+              <p
+                className='remove'
+                onClick={() => {
+                  props.handleDeleteItem(e);
+                }}
+              >
+                Remove
+              </p>
+            </div>
           </div>
         );
       });

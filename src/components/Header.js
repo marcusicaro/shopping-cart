@@ -37,6 +37,7 @@ export default function Header(props) {
           <Cart
             addItemToCart={props.addItemToCart}
             removeItemFromCart={props.removeItemFromCart}
+            handleDeleteItem={props.handleDeleteItem}
             cart={props.cart}
           />
         </div>

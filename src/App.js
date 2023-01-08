@@ -47,6 +47,18 @@ function App() {
     setCart(cartCopy);
   }
 
+  function handleDeleteItem(item) {
+    let cartCopy = [...cart];
+
+    cartCopy.forEach((el, index) => {
+      if (el.name === item.name) {
+        return cartCopy.splice(index, 1);
+      }
+    });
+
+    setCart(cartCopy);
+  }
+
   return (
     <div className='App'>
       <Routes>
@@ -57,6 +69,7 @@ function App() {
             <ShopRoutes
               addItemToCart={addItemToCart}
               removeItemFromCart={removeItemFromCart}
+              handleDeleteItem={handleDeleteItem}
               cart={cart}
             />
           }
