@@ -17,7 +17,7 @@ export default function ShopRoutes(props) {
             />
           }
         >
-          <Route index element={<Shop />} />
+          <Route index element={<Shop addItemToCart={props.addItemToCart} />} />
           <Route
             path=':id'
             element={

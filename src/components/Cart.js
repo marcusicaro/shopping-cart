@@ -29,9 +29,9 @@ export default function Cart(props) {
     });
   };
   return (
-    <div>
-      <FontAwesomeIcon icon={faCartShopping} />
-      {handleRenderItems()}
+    <div className='cart'>
+      <FontAwesomeIcon icon={faCartShopping} className='icon' />
+      <div className='cart-items'>{handleRenderItems()}</div>
     </div>
   );
 }

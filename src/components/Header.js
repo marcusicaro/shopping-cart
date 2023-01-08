@@ -13,23 +13,32 @@ export default function Header(props) {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <button onClick={() => navigate(-1)}>Back</button>
-      Header
-      <Cart
-        addItemToCart={props.addItemToCart}
-        removeItemFromCart={props.removeItemFromCart}
-        cart={props.cart}
-      />
-      <input
-        type='text'
-        value={name}
-        onChange={(e) => setSearchParams({ name: e.target.value })}
-        placeholder='Search dragon...'
-      />
-      <Link to={`/shop/${name}`}>
-        <button>Search</button>
-      </Link>
+    <div className='header'>
+      <div className='header-content'>
+        <img
+          src={`/images/logo.png`}
+          alt='dragon store logo'
+          className='logo'
+        />
+        <div className='search'>
+          <input
+            type='text'
+            value={name}
+            onChange={(e) => setSearchParams({ name: e.target.value })}
+            placeholder='Search dragon...'
+          />
+          <Link to={`/shop/${name}`}>
+            <button>Search</button>
+          </Link>
+        </div>
+        <div>
+          <Cart
+            addItemToCart={props.addItemToCart}
+            removeItemFromCart={props.removeItemFromCart}
+            cart={props.cart}
+          />
+        </div>
+      </div>
       <Outlet context={[items]} />
     </div>
   );

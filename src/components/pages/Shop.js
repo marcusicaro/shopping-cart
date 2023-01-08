@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import ParticlesBackground from "../ParticleBackground";
 import Item from "./Item";
 
-export default function Shop() {
+export default function Shop(props) {
   const [item] = useOutletContext();
   const handleItemsRender = (list) => {
     return list.map((e) => (
@@ -19,22 +19,29 @@ export default function Shop() {
               <b>{e.name}</b>
             </p>
             <p>${e.price}</p>
-            <button className='add-button'>Add to cart</button>
           </div>
         </Link>
+
+        <button
+          onClick={() => {
+            props.addItemToCart(e);
+          }}
+          className='add-button'
+        >
+          Add to cart
+        </button>
       </div>
     ));
   };
 
   return (
     <div className='shop-main'>
-      <h1>Shop Page</h1>
       <div className='items-container'> {handleItemsRender(item)}</div>
 
       <Routes>
         <Route path='/shop/:id' element={<Item />} />
       </Routes>
-      <ParticlesBackground />
+      {/* <ParticlesBackground /> */}
     </div>
   );
 }
