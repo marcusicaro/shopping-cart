@@ -1,0 +1,40 @@
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
+import { Link } from "react-router-dom";
+import ParticlesBackground from "../ParticleBackground";
+import Item from "./Item";
+
+export default function Shop() {
+  const [item] = useOutletContext();
+  const handleItemsRender = (list) => {
+    return list.map((e) => (
+      <div className='item-box' key={e.id}>
+        <Link to={e.id}>
+          <div className='item-img'>
+            <img src={`/images/${e.id}.png`} alt='dragon' className='img-box' />
+          </div>
+          <div className='item-description'>
+            <p>
+              <b>{e.name}</b>
+            </p>
+            <p>${e.price}</p>
+            <button className='add-button'>Add to cart</button>
+          </div>
+        </Link>
+      </div>
+    ));
+  };
+
+  return (
+    <div className='shop-main'>
+      <h1>Shop Page</h1>
+      <div className='items-container'> {handleItemsRender(item)}</div>
+
+      <Routes>
+        <Route path='/shop/:id' element={<Item />} />
+      </Routes>
+      <ParticlesBackground />
+    </div>
+  );
+}

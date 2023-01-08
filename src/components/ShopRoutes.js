@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Header";
-import Shop from "./Shop";
-import Item from "./Item";
+import Shop from "./pages/Shop";
+import Item from "./pages/Item";
 
-export default function ShopRoutes() {
+export default function ShopRoutes(props) {
   return (
     <>
       <Routes>
-        <Route element={<Header />}>
+        <Route
+          element={
+            <Header
+              addItemToCart={props.addItemToCart}
+              removeItemFromCart={props.removeItemFromCart}
+              cart={props.cart}
+            />
+          }
+        >
           <Route index element={<Shop />} />
-          <Route path=':id' element={<Item />} />
+          <Route
+            path=':id'
+            element={
+              <Item
+                addItemToCart={props.addItemToCart}
+                removeItemFromCart={props.removeItemFromCart}
+              />
+            }
+          />
         </Route>
       </Routes>
     </>

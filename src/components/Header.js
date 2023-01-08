@@ -1,55 +1,26 @@
 import React, { useState } from "react";
-import { Link, Outlet, useSearchParams } from "react-router-dom";
+import { Link, Outlet, useNavigate, useSearchParams } from "react-router-dom";
+import Cart from "./Cart";
+import itemsList from "./data/itemsList";
 
-export default function Header() {
+export default function Header(props) {
   const [searchParams, setSearchParams] = useSearchParams({
     name: "",
   });
-  const [items, setItems] = useState({
-    greenDragon: {
-      name: "Green Dragon",
-      price: 10,
-      id: 1,
-    },
-    brownDragon: {
-      name: "Brown Dragon",
-      price: 20,
-    },
-    redDragon: {
-      name: "Red Dragon",
-      price: 50,
-    },
-    silverDragon: {
-      name: "Silver Dragon",
-      price: 100,
-    },
-    blackDragon: {
-      name: "Black Dragon",
-      price: 250,
-    },
-    spikedDragon: {
-      name: "Spiked Tail Dragon",
-      price: 500,
-    },
-    chineseDragon: {
-      name: "Chinese Dragon",
-      price: 1000,
-    },
-    skullDragon: {
-      name: "Skull Dragon",
-      price: 1500,
-    },
-    dancingDragon: {
-      name: "Dancing Dragon",
-      price: 5000,
-    },
-  });
+  const [items] = useState(itemsList);
 
   const name = searchParams.get("name");
+  const navigate = useNavigate();
+
   return (
     <div>
+      <button onClick={() => navigate(-1)}>Back</button>
       Header
-      <Outlet context={[items, setItems]} />
+      <Cart
+        addItemToCart={props.addItemToCart}
+        removeItemFromCart={props.removeItemFromCart}
+        cart={props.cart}
+      />
       <input
         type='text'
         value={name}
@@ -59,6 +30,7 @@ export default function Header() {
       <Link to={`/shop/${name}`}>
         <button>Search</button>
       </Link>
+      <Outlet context={[items]} />
     </div>
   );
 }

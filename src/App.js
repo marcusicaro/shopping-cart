@@ -1,19 +1,63 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Shop from "./components/Shop";
-import Item from "./components/Item";
-import NotFound from "./components/NotFound";
-import Header from "./components/Header";
-import "./App.css";
+import Home from "./components/pages/Home";
+import NotFound from "./components/pages/NotFound";
 import ShopRoutes from "./components/ShopRoutes";
+import "./App.css";
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  function addItemToCart(item) {
+    let cartCopy = [...cart];
+    let itemInCart;
+
+    cartCopy.forEach((el) => {
+      if (el.name === item.name) {
+        itemInCart = true;
+        return (el.quantity += 1);
+      }
+    });
+
+    itemInCart == null &&
+      cartCopy.push({
+        name: item.name,
+        quantity: 1,
+      });
+
+    setCart(cartCopy);
+  }
+
+  function removeItemFromCart(item) {
+    let cartCopy = [...cart];
+
+    cartCopy.forEach((el, index) => {
+      if (el.name === item.name) {
+        el.quantity -= 1;
+
+        if (el.quantity === 0) {
+          return cartCopy.splice(index, 1);
+        }
+      }
+    });
+
+    setCart(cartCopy);
+  }
+
   return (
     <div className='App'>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/shop/*' element={<ShopRoutes />} />
+        <Route
+          path='/shop/*'
+          element={
+            <ShopRoutes
+              addItemToCart={addItemToCart}
+              removeItemFromCart={removeItemFromCart}
+              cart={cart}
+            />
+          }
+        />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </div>

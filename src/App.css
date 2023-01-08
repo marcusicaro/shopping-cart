@@ -1,38 +1,159 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home-bg {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../public/images/galaxy.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  justify-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.vertical-center {
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* gap: 10px; */
+}
+
+.home-bg h1,
+.home-bg h3 {
+  color: rgb(238, 238, 238);
+}
+
+.home-bg h1 {
+  font-size: 72px;
+  font-weight: 600;
+}
+
+.btn {
+  font-size: 16px;
+  background: none;
+  color: rgb(238, 238, 238);
+  border: 1px solid rgb(238, 238, 238);
+  padding: 0.5em 1em;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  margin: 1rem;
+  border-radius: 5px;
+  transition: 100ms ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.04);
+  mix-blend-mode: lighten;
+}
+
+.btn.btn-border-pop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  /* border: 1px solid rgb(238, 238, 238); */
+  border-radius: 8px;
+  transition: 100ms ease-in-out;
+}
+
+.btn.btn-border-pop:hover::before,
+.btn.btn-border-pop:focus::before {
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid rgb(238, 238, 238);
+}
+
+.golden-dragon {
+  position: absolute;
+  height: 100vh;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.shop-main {
+  background-color: #f1f1f1;
+  background-image: url("../public/images/galaxy.jpg");
+  background-repeat: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0px 10% 50px 10%;
+  gap: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item-box {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: default;
+  z-index: 1;
+}
+
+.item-box button {
+  cursor: pointer;
+  width: 150px;
+  align-self: center;
+  padding: 0.5em;
+  background-color: black;
+  color: #f1f1f1;
+  transition: 0.2s ease-in-out;
+  font-weight: 900;
+}
+
+.item-box button:hover {
+  background-color: rgb(48, 48, 48);
+}
+
+.item-box img {
+  max-width: 250px;
+  max-height: 200px;
+  cursor: default;
+}
+
+.item-img {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  height: 200px;
+  cursor: default;
+}
+
+.item-description {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  justify-content: center;
+  gap: 0.5em;
+  width: 350px;
+  border-top: 1px solid black;
+  height: 150px;
+  cursor: default;
 }
