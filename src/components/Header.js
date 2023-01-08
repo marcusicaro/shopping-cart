@@ -15,11 +15,13 @@ export default function Header(props) {
   return (
     <div className='header'>
       <div className='header-content'>
-        <img
-          src={`/images/logo.png`}
-          alt='dragon store logo'
-          className='logo'
-        />
+        <Link to={"/shop"}>
+          <img
+            src={`/images/logo.png`}
+            alt='dragon store logo'
+            className='logo'
+          />
+        </Link>
         <div className='search'>
           <input
             type='text'

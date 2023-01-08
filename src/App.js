@@ -8,21 +8,24 @@ import "./App.css";
 function App() {
   const [cart, setCart] = useState([]);
 
-  function addItemToCart(item) {
+  function addItemToCart(item, ammount) {
     let cartCopy = [...cart];
     let itemInCart;
 
     cartCopy.forEach((el) => {
       if (el.name === item.name) {
         itemInCart = true;
-        return (el.quantity += 1);
+        ammount > 0
+          ? (el.quantity = ammount + Number(el.quantity))
+          : (el.quantity += 1);
       }
     });
 
     itemInCart == null &&
       cartCopy.push({
         name: item.name,
-        quantity: 1,
+        price: item.price,
+        quantity: ammount || 1,
       });
 
     setCart(cartCopy);

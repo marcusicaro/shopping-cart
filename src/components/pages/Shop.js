@@ -2,7 +2,6 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 import { Link } from "react-router-dom";
-import ParticlesBackground from "../ParticleBackground";
 import Item from "./Item";
 
 export default function Shop(props) {
@@ -41,7 +40,6 @@ export default function Shop(props) {
       <Routes>
         <Route path='/shop/:id' element={<Item />} />
       </Routes>
-      {/* <ParticlesBackground /> */}
     </div>
   );
 }

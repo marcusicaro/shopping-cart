@@ -4,6 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 export default function Cart(props) {
+  const handleTotal = () => {
+    let result = 0;
+    props.cart.map((e) => {
+      result += e.price * e.quantity;
+    });
+    return result;
+  };
+
   const handleRenderItems = () => {
     if (props.cart.length > 0) {
       return props.cart.map((e) => {
@@ -55,6 +63,9 @@ export default function Cart(props) {
         </div>
         <h1>Your shopping cart</h1>
         {handleRenderItems()}
+        <p className='total'>
+          <b>Total: {handleTotal()}</b>
+        </p>
       </div>
     </div>
   );
