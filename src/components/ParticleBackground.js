@@ -31,7 +31,7 @@ function ParticlesBackground() {
           },
           particles: {
             color: {
-              value: "#FFFF00",
+              value: "#FFFFFF",
             },
             number: {
               density: {

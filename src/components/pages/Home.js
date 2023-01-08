@@ -7,7 +7,7 @@ export default function Home(props) {
     <div className='container home-bg'>
       <div style={{ zIndex: 2 }} className='vertical-center'>
         <h1>Shenlong Store</h1>
-        <h3>Visit the only place where you can buy a dragon</h3>
+        <h3>Visit the only place in the universe where you can buy a dragon</h3>
         <Link to='/shop'>
           <button className='btn btn-border-pop'>Enter the Dragon</button>
         </Link>

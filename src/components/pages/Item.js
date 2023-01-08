@@ -10,6 +10,7 @@ export default function Item(props) {
       if (e.id === id) {
         return (
           <div key={e.id}>
+            <img src={`/images/${e.id}.png`} alt='dragon' />
             <h3>{e.name}</h3>
             <p>{e.price}</p>
             <button onClick={() => props.addItemToCart(e)}>Buy</button>

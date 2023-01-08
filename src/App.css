@@ -18,7 +18,7 @@ a {
   background-image: url("../public/images/galaxy.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(238, 238, 238);
   display: flex;
   justify-content: center;
 }
@@ -33,7 +33,7 @@ a {
 
 .home-bg h1,
 .home-bg h3 {
-  color: rgb(230, 230, 230);
+  color: rgb(238, 238, 238);
 }
 
 .home-bg h1 {
@@ -41,34 +41,14 @@ a {
   font-weight: 600;
 }
 
-/* .home-btn {
-  background: none;
-  color: rgb(230, 230, 230);
-  border: 1px solid rgb(230, 230, 230);
-  padding: 0.5rem;
-  font-weight: bold;
-  cursor: pointer;
-  outline: inherit;
-  margin: 1rem;
-  border-radius: 5px;
-  transition: ease-in 0.25s;
-}
-
-.home-btn:hover {
-  background-color: rgb(230, 230, 230);
-  color: black;
-  mix-blend-mode: lighten;
-  border: 3px double rgb(0, 0, 0);
-} */
-
 .btn {
+  font-size: 16px;
   background: none;
-  color: rgb(230, 230, 230);
-  border: 1px solid rgb(230, 230, 230);
-  padding: 0.5rem 1rem;
+  color: rgb(238, 238, 238);
+  border: 1px solid rgb(238, 238, 238);
+  padding: 0.5em 1em;
   font-weight: bold;
   cursor: pointer;
-  /* outline: inherit; */
   position: relative;
   margin: 1rem;
   border-radius: 5px;
@@ -76,8 +56,7 @@ a {
 }
 
 .btn:hover {
-  background-color: rgb(230, 230, 230);
-  color: black;
+  transform: scale(1.04);
   mix-blend-mode: lighten;
 }
 
@@ -89,7 +68,7 @@ a {
   right: 0;
   bottom: 0;
   z-index: -1;
-  /* border: 1px solid rgb(230, 230, 230); */
+  /* border: 1px solid rgb(238, 238, 238); */
   border-radius: 8px;
   transition: 100ms ease-in-out;
 }
@@ -100,13 +79,81 @@ a {
   left: -4px;
   right: -4px;
   bottom: -4px;
-  border: 1px solid rgb(230, 230, 230);
+  border: 1px solid rgb(238, 238, 238);
 }
 
 .golden-dragon {
   position: absolute;
-  /* width: 100%; */
   height: 100vh;
   display: flex;
   justify-content: center;
+}
+
+.shop-main {
+  background-color: #f1f1f1;
+  background-image: url("../public/images/galaxy.jpg");
+  background-repeat: none;
+}
+
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0px 10% 50px 10%;
+  gap: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item-box {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: default;
+  z-index: 1;
+}
+
+.item-box button {
+  cursor: pointer;
+  width: 150px;
+  align-self: center;
+  padding: 0.5em;
+  background-color: black;
+  color: #f1f1f1;
+  transition: 0.2s ease-in-out;
+  font-weight: 900;
+}
+
+.item-box button:hover {
+  background-color: rgb(48, 48, 48);
+}
+
+.item-box img {
+  max-width: 250px;
+  max-height: 200px;
+  cursor: default;
+}
+
+.item-img {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  height: 200px;
+  cursor: default;
+}
+
+.item-description {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  justify-content: center;
+  gap: 0.5em;
+  width: 350px;
+  border-top: 1px solid black;
+  height: 150px;
+  cursor: default;
 }
