@@ -26,7 +26,11 @@ export default function Search(props) {
       <div className='item-box' key={e.id}>
         <Link to={`/shop/${e.id}`}>
           <div className='item-img'>
-            <img src={`/images/${e.id}.png`} alt='dragon' className='img-box' />
+            <img
+              src={require(`../../images/${e.id}.png`)}
+              alt='dragon'
+              className='img-box'
+            />
           </div>
           <div className='item-description'>
             <p>

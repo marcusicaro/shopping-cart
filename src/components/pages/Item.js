@@ -12,7 +12,7 @@ export default function Item(props) {
         return (
           <div key={e.id} className='item-page'>
             <div className='item-card'>
-              <img src={`/images/${e.id}.png`} alt='dragon' />
+              <img src={require(`../../images/${e.id}.png`)} alt='dragon' />
               <h3>{e.name}</h3>
               <p>{e.price}</p>
               <div className='buttons'>
