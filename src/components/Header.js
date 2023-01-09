@@ -10,7 +10,6 @@ export default function Header(props) {
   const [items] = useState(itemsList);
 
   const name = searchParams.get("name");
-  const navigate = useNavigate();
 
   return (
     <div className='header'>
@@ -29,7 +28,7 @@ export default function Header(props) {
             onChange={(e) => setSearchParams({ name: e.target.value })}
             placeholder='Search dragon...'
           />
-          <Link to={`/shop/${name}`}>
+          <Link to={`/shop/search/${name}`}>
             <button>Search</button>
           </Link>
         </div>
