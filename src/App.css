@@ -89,6 +89,8 @@ a {
 }
 
 .shop-main {
+  width: 100%;
+  min-height: 83vh;
   background-color: #f1f1f1;
   background-image: linear-gradient(180deg, #ef5734 0%, #ca5858 100%);
 }
