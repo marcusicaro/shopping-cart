@@ -348,6 +348,43 @@ a {
   cursor: pointer;
 }
 
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.buttons button {
+  transition: 100ms ease-in-out;
+}
+
+.buttons button:hover {
+  transition: 100ms ease-in-out;
+  transform: scale(1.04);
+}
+
+.increase-btn,
+.decrease-btn {
+  position: relative;
+  padding: 1px 10px !important;
+  font-size: 22px;
+  font-weight: bold;
+  width: auto !important;
+  align-self: baseline !important;
+  justify-self: baseline !important;
+}
+
+.buttons input {
+  border: none;
+  outline: none;
+  appearance: none;
+  margin: 0;
+  width: 5rem;
+  height: 2.5rem;
+  border-radius: 20px;
+  padding: 1em;
+  text-align: center;
+}
+
 @media screen and (max-width: 650px) {
   .header-content {
     grid-template-columns: 1fr;

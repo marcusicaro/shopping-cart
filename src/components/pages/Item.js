@@ -16,13 +16,33 @@ export default function Item(props) {
               <h3>{e.name}</h3>
               <p>{e.price}</p>
               <div className='buttons'>
+                <button
+                  className='increase-btn'
+                  onClick={() => {
+                    if (ammount > 1) {
+                      setAmmount(ammount - 1);
+                    }
+                  }}
+                >
+                  -
+                </button>
                 <input
-                  type={"number"}
+                  type={"numeric"}
                   value={ammount}
                   onChange={(e) => {
-                    setAmmount(e.target.value);
+                    e.target.value >= 1
+                      ? setAmmount(e.target.value)
+                      : (e.target.value = 1);
                   }}
                 />
+                <button
+                  className='decrease-btn'
+                  onClick={() => {
+                    setAmmount(Number(ammount) + 1);
+                  }}
+                >
+                  +
+                </button>
                 <button onClick={() => props.addItemToCart(e, ammount)}>
                   Buy
                 </button>
