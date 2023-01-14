@@ -2,8 +2,17 @@ import React from "react";
 import toggleSidebar from "./functions/toggleSidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components";
 
 export default function Cart(props) {
+  function handleQuantity() {
+    let result = 0;
+    props.cart.forEach((el) => {
+      result += el.quantity;
+    });
+    if (result > 0) return <div className='cart-quantity'>{result}</div>;
+  }
+
   const handleTotal = () => {
     let result = 0;
     props.cart.map((e) => {
@@ -53,7 +62,7 @@ export default function Cart(props) {
   };
   return (
     <div className='cart'>
-      <div>
+      <div className='cart-info'>
         <FontAwesomeIcon
           icon={faCartShopping}
           className='cart-icon'
@@ -61,6 +70,7 @@ export default function Cart(props) {
             toggleSidebar();
           }}
         />
+        {handleQuantity()}
       </div>
       <div className='cart-items'>
         <div

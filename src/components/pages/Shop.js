@@ -11,7 +11,11 @@ export default function Shop(props) {
       <div className='item-box' key={e.id}>
         <Link to={e.id}>
           <div className='item-img'>
-            <img src={`/images/${e.id}.png`} alt='dragon' className='img-box' />
+            <img
+              src={require(`../../images/${e.id}.png`)}
+              alt='dragon'
+              className='img-box'
+            />
           </div>
           <div className='item-description'>
             <p>

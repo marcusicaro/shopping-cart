@@ -16,7 +16,7 @@ export default function Header(props) {
       <div className='header-content'>
         <Link to={"/shop"}>
           <img
-            src={`/images/logo.png`}
+            src={require("../images/logo.png")}
             alt='dragon store logo'
             className='logo'
           />
