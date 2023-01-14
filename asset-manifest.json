@@ -1,15 +1,25 @@
 {
   "files": {
-    "main.css": "/shopping-cart/static/css/main.9fc35f3f.css",
-    "main.js": "/shopping-cart/static/js/main.4ad29bac.js",
+    "main.css": "/shopping-cart/static/css/main.0559c950.css",
+    "main.js": "/shopping-cart/static/js/main.06430f3e.js",
+    "static/media/chineseDragon.png": "/shopping-cart/static/media/chineseDragon.7209bbf33723cb033b21.png",
+    "static/media/greenDragon.png": "/shopping-cart/static/media/greenDragon.fddb6ee40903ceb5526d.png",
+    "static/media/redDragon.png": "/shopping-cart/static/media/redDragon.be47e6139253c0b78d47.png",
+    "static/media/blackDragon.png": "/shopping-cart/static/media/blackDragon.d8445b044500754a861c.png",
+    "static/media/silverDragon.png": "/shopping-cart/static/media/silverDragon.6d54829e5b8423c4b46b.png",
     "static/media/goldenDragon-removebg.png": "/shopping-cart/static/media/goldenDragon-removebg.551e18dc68b6b030c987.png",
+    "static/media/brownDragon.png": "/shopping-cart/static/media/brownDragon.ff6646665d0efdee2134.png",
+    "static/media/spikedDragon.png": "/shopping-cart/static/media/spikedDragon.2f8d4eb4831082ee4261.png",
+    "static/media/skullDragon.png": "/shopping-cart/static/media/skullDragon.42c2ee5b7274a6158034.png",
+    "static/media/dancingDragon.png": "/shopping-cart/static/media/dancingDragon.0fcc0ce45f482794fe89.png",
     "static/media/galaxy.jpg": "/shopping-cart/static/media/galaxy.93a6ce8bf9ce75a5b7b1.jpg",
+    "static/media/logo.png": "/shopping-cart/static/media/logo.7023c8d422beadfe3b33.png",
     "index.html": "/shopping-cart/index.html",
-    "main.9fc35f3f.css.map": "/shopping-cart/static/css/main.9fc35f3f.css.map",
-    "main.4ad29bac.js.map": "/shopping-cart/static/js/main.4ad29bac.js.map"
+    "main.0559c950.css.map": "/shopping-cart/static/css/main.0559c950.css.map",
+    "main.06430f3e.js.map": "/shopping-cart/static/js/main.06430f3e.js.map"
   },
   "entrypoints": [
-    "static/css/main.9fc35f3f.css",
-    "static/js/main.4ad29bac.js"
+    "static/css/main.0559c950.css",
+    "static/js/main.06430f3e.js"
   ]
 }
