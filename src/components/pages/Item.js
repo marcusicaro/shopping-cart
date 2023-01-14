@@ -43,7 +43,7 @@ export default function Item(props) {
                 >
                   +
                 </button>
-                <button onClick={() => props.addItemToCart(e, ammount)}>
+                <button onClick={() => props.addItemToCart(e, Number(ammount))}>
                   Buy
                 </button>
                 <button onClick={() => props.removeItemFromCart(e)}>
