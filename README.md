@@ -1,7 +1,7 @@
-##Preview
+## Preview
 https://marcusicaro.github.io/shopping-cart/
 
-##Images:
+## Images:
 Golden Dragon: Imagem de <a href="https://pixabay.com/pt/users/josch13-48777/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=238931">Josch13</a> por <a href="https://pixabay.com/pt//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=238931">Pixabay</a>
 
 Black dragon: Imagem de <a href="https://pixabay.com/pt/users/pendleburyannette-1860575/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4234372">Annette</a> por <a href="https://pixabay.com/pt//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4234372">Pixabay</a>
